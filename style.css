@@ -1,0 +1,70 @@
+html, * {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(0, 51, 102);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+#noteContainer {
+    display: flex;
+    justify-content: center;   
+}
+
+button {
+    background-color: #0080ff;
+    padding: 1rem 1.5rem;
+    margin-left: 1rem;
+    border: none;
+}
+
+#clearNotes {
+    background-color: red;
+}
+textarea, input{
+    width: 32%;
+}
+textarea, input, button {
+  resize: none;
+  font-family: 'Roboto', sans-serif;
+  padding: 1rem;
+}
+
+.userNote {
+    position: relative;
+    width: 25rem;
+    height: 16rem;
+    border-radius: 1rem;
+    margin: 2.4rem 2.4rem 0 0;
+    background-color: black;
+    color: white;
+    padding: 1.2rem 1.6rem;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.pinNote:hover {
+    cursor: pointer;
+}
+
+.pinNote {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+}
+
+#timestamp{
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.4rem;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="row">
+        <div id="title"><h1>Sticky Notes</h1></div>
+    </div>
+    <div class="row">
+        <input type="text" id="noteTitle" placeholder="Enter your title here">
+    </div>
+    <div class="row">
+        <textarea placeholder="Enter your text here" id="noteText" name="noteText" rows="7"></textarea>
+    </div>
+    <div class="row">
+        <select name="noteColor" id="noteColor">
+            <option value="none">Select color</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+        </select>
+        <button id="noteSubmit">Add a note</button>
+        <button id="clearNotes">Delete all notes</button>
+    </div>
+    <div class="pinnedNotes">
+    </div>
+    <div id="noteContainer">
+    </div>
+    <script src="notes.js"></script>
+</body>
+</html>
