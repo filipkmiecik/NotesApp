@@ -87,7 +87,7 @@ function loadNotes() {
   return JSON.parse(localStorage.getItem("items")) || {
     title: "Notes",
     entries: []
-  };
+  }
 }
 
 function addDeleteButton(deleteButton) {
@@ -101,9 +101,9 @@ function deleteData(id) {
   let entries = notesCollection.entries.filter(entry => {
     return entry.id != id.toString()
   })
-  notesCollection.entries = entries;
+  notesCollection.entries = entries
 
-  saveNotes();
+  saveNotes()
 }
 
 function deleteNote(e) {

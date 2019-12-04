@@ -62,17 +62,17 @@ textarea, input, button {
   border-radius: 0 0 0.4rem 0.4rem;
 }
 
-.userNote.rood {
+.userNote.red {
   background-color: #ff0b00;
 }
 
-.userNote.blauw {
+.userNote.blue {
   background-color: #0061c8;
 }
-.userNote.groen {
+.userNote.green {
   background-color: #89e25d;
 }
-.userNote.geel {
+.userNote.yellow {
   background-color: #f0df2a;
 }
 
