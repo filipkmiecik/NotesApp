@@ -52,11 +52,35 @@ textarea, input, button {
     font-size: 1.2rem;
 }
 
-.pinNote:hover {
+.userNote::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.8rem;
+  border-radius: 0 0 0.4rem 0.4rem;
+}
+
+.userNote.rood {
+  background-color: #ff0b00;
+}
+
+.userNote.blauw {
+  background-color: #0061c8;
+}
+.userNote.groen {
+  background-color: #89e25d;
+}
+.userNote.geel {
+  background-color: #f0df2a;
+}
+
+.deleteNote:hover {
     cursor: pointer;
 }
 
-.pinNote {
+.deleteNote {
     position: absolute;
     top: 0.9rem;
     right: 0.9rem;
@@ -68,3 +92,4 @@ textarea, input, button {
     bottom: 0.2rem;
     right: 0.4rem;
 }
+
