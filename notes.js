@@ -22,7 +22,7 @@ let notesCollection = loadNotes()
 
 if (notesCollection.entries.length > 0) {
   notesCollection.entries.forEach(entry => {
-    addNote(entry.id, entry.title, entry.text, entry.color)
+    new noteDOM(entry.id, entry.title, entry.text, entry.color)
   })
 }
 
@@ -34,35 +34,12 @@ function addData() {
   let id = JSON.stringify({ title, text, color }).hashCode()
   if (note.title.value && note.text.value != '') {
 
-    addNote(id, title, text, color)
+    new noteAdd(id, title, text, color)
     saveNote(id, title, text, color)
 
     note.title.value = ''
     note.text.value = ''
   }
-}
-
-function addNote(id, title, text, color) {
-  let userNote = document.createElement('div')
-  let deleteNote = document.createElement('span')
-  let noteDate = new Date();
-  let noteTime = ("0" + noteDate.getDate()).slice(-2) + "-" + ("0" + (noteDate.getMonth() + 1)).slice(-2) + "-" +
-    noteDate.getFullYear() + " " + ("0" + noteDate.getHours()).slice(-2) + ":" + ("0" + noteDate.getMinutes()).slice(-2)
-  deleteNote.classList.add('deleteNote')
-  deleteNote.innerHTML = '&times;'
-
-  userNote.classList.add('userNote')
-  userNote.classList.add(color)
-  userNote.setAttribute('data-index', id)
-  userNote.innerHTML =
-    `
-    <h2>${title}</h2>
-    <p>${text}</p>
-    <p id='timestamp'>Added ${noteTime}</p>
-    `
-  noteContainer.appendChild(userNote)
-  userNote.appendChild(deleteNote)
-  addDeleteButton(deleteNote)
 }
 
 clearNotes.addEventListener('click', function () {
