@@ -18,11 +18,11 @@ clearNotes = document.querySelector('#clearNotes')
 
 const noteContainer = document.querySelector('#noteContainer')
 
-let notesCollection = loadNotes()
+let notesCollection = new noteLoad()
 
 if (notesCollection.entries.length > 0) {
   notesCollection.entries.forEach(entry => {
-    new noteDOM(entry.id, entry.title, entry.text, entry.color)
+    new noteAdd(entry.id, entry.title, entry.text, entry.color)
   })
 }
 
@@ -58,13 +58,6 @@ function saveNote(id, title, text, color) {
 
 function saveNotes() {
   localStorage.setItem("items", JSON.stringify(notesCollection));
-}
-
-function loadNotes() {
-  return JSON.parse(localStorage.getItem("items")) || {
-    title: "Notes",
-    entries: []
-  }
 }
 
 function addDeleteButton(deleteButton) {
