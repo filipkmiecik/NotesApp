@@ -54,22 +54,6 @@ noteSubmit.addEventListener('click', addData)
 function addDeleteButton(deleteButton) {
   deleteButton.addEventListener('click', function (e) {
     e.stopPropagation()
-    deleteNote(e)
+    new noteDelete(e)
   })
-}
-
-function deleteData(id) {
-  let entries = notesCollection.entries.filter(entry => {
-    return entry.id != id.toString()
-  })
-  notesCollection.entries = entries
-  localStorage.setItem("items", JSON.stringify(notesCollection))
-}
-
-function deleteNote(e) {
-  let eventNote = e.target.parentNode,
-    noteId = eventNote.getAttribute('data-index')
-
-  eventNote.parentNode.removeChild(eventNote)
-  deleteData(noteId)
 }
