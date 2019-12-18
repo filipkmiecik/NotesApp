@@ -35,7 +35,7 @@ function addData() {
   if (note.title.value && note.text.value != '') {
 
     new noteAdd(id, title, text, color)
-    saveNote(id, title, text, color)
+    new noteSave(id, title, text, color)
 
     note.title.value = ''
     note.text.value = ''
@@ -51,15 +51,6 @@ clearNotes.addEventListener('click', function () {
 
 noteSubmit.addEventListener('click', addData)
 
-function saveNote(id, title, text, color) {
-  notesCollection.entries.push({ id, title, text, color });
-  saveNotes()
-}
-
-function saveNotes() {
-  localStorage.setItem("items", JSON.stringify(notesCollection));
-}
-
 function addDeleteButton(deleteButton) {
   deleteButton.addEventListener('click', function (e) {
     e.stopPropagation()
@@ -72,8 +63,7 @@ function deleteData(id) {
     return entry.id != id.toString()
   })
   notesCollection.entries = entries
-
-  saveNotes()
+  localStorage.setItem("items", JSON.stringify(notesCollection))
 }
 
 function deleteNote(e) {
